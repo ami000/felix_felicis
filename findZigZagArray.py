@@ -4,8 +4,8 @@ def findZigZagArray(arr):
     arr.sort()
     mid = int((n + 1) / 2) - 1
     start = mid
-    end = n - 1
-    arr[start:end + 1] = arr[start:end + 1][::-1]
+    end = n
+    arr[start:end] = arr[start:end][::-1]
     return arr
 
 if __name__ == '__main__':
