@@ -36,6 +36,18 @@ def bubbleSort(array):
                 swap(array, index, index + 1)
                 is_sorted = False
         final_index -= 1
+
+def bubbleSortWithKey(array, key):
+    is_sorted = False
+    final_index = len(array) - 1
+    while not is_sorted:
+        is_sorted = True
+        for index in range(final_index):
+            if array[index][key] > array[index + 1][key]:
+                swap(array, index, index + 1)
+                is_sorted = False
+        final_index -= 1
+
 if __name__ == "__main__":
     # Testcase 1
     array1 = [10, 34, -81, 68, 123, 9999, 907891, 109842, -309]
@@ -43,3 +55,12 @@ if __name__ == "__main__":
     array2 = [10, 34, -81, 68, 123, 9999, 907891, 109842, -309]
     bubbleSort(array2)
     check(expected_1, array2)
+    elements  = [
+        { 'name': 'mona',   'transaction_amount': 1000, 'device': 'iphone-10'},
+        { 'name': 'dhaval', 'transaction_amount': 400,  'device': 'google pixel'},
+        { 'name': 'kathy',  'transaction_amount': 200,  'device': 'vivo'},
+        { 'name': 'aamir',  'transaction_amount': 800,  'device': 'iphone-8'},
+    ]
+    bubbleSortWithKey(elements, 'transaction_amount')
+    print(elements)
+

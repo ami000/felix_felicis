@@ -3,7 +3,6 @@ def palindromeIndex  (s):
         if s[i] != s[-(i + 1)]:
             newstr = s[:i] + s[i + 1:]
             print(newstr)
-            print(newstr)
             if newstr[:] == newstr[::-1]:
                 return i
             return -(i + 1) + len(s)
